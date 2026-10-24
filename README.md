@@ -21,9 +21,9 @@ I build AI systems end-to-end, from framing the problem and the data to model tr
 
 ## 🛠️ Tech
 
-**GenAI & Agents:** LLM APIs (Gemini, OpenAI, Claude) · Ollama (local LLMs) · LangGraph · LangChain · RAG (hybrid BM25 + dense, reranking) · Multi-Agent Systems · MCP · Prompt Engineering · Structured Outputs (Pydantic) · LLM Evaluation (LLM-as-a-judge, RAGAS, pre-registered tests)
-**ML & Deep Learning:** PyTorch · scikit-learn · LightGBM · OpenCV · CNNs · Computer Vision · Explainable AI (Grad-CAM) · NumPy · Pandas
-**Vector Search:** FAISS · ChromaDB · Embeddings
+**GenAI & Agents:** LLM APIs (Gemini, OpenAI, Claude) · Ollama (local LLMs) · LangGraph · LangChain · RAG (hybrid BM25 + dense, reranking) · Multi-Agent Systems · MCP · Prompt Engineering · Structured Outputs (Pydantic) · LLM Evaluation (LLM-as-a-judge, RAGAS, pre-registered tests)  
+**ML & Deep Learning:** PyTorch · scikit-learn · LightGBM · OpenCV · CNNs · Computer Vision · Explainable AI (Grad-CAM) · NumPy · Pandas  
+**Vector Search:** FAISS · ChromaDB · Embeddings  
 **Engineering:** Python · TypeScript · SQL · FastAPI · Streamlit · Next.js · React · Docker · GitHub Actions (CI/CD) · pytest · Linux · OpenTelemetry
 
 ## 💡 How I work
