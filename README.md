@@ -12,21 +12,23 @@ I build AI systems end-to-end, from framing the problem and the data to model tr
 
 | Project | What it does | Stack |
 |---|---|---|
+| **[AgentRAG](https://github.com/iamrohitkumaryadav9/AgentRAG)** · [live demo](https://agentragpreregisteredllm.streamlit.app/) | 4-agent LangGraph RAG system (router → hybrid retriever → synthesizer → critic) evaluated on BEIR SciFact. Hybrid BM25 + dense retrieval raised **nDCG@10 from 0.670 to 0.711** (significant, Holm-corrected); a Gemini verifier reached **κ 0.67 vs expert labels**. A pre-registered test showed the LLM self-critique loop gave **no significant gain**, and pinned the bottleneck on the judge, not retrieval. | LangGraph, Gemini, BM25, FAISS, DeBERTa-NLI, FastAPI, Streamlit |
+| **[TraceGuard](https://github.com/iamrohitkumaryadav9/traceguard)** · [live demo](https://traceguardfirstversionusingelliptical.streamlit.app/) | Evaluation-first AML investigation agent on the real Elliptic Bitcoin dataset: LightGBM detector at **0.79 PR-AUC** (vs 0.18 baseline), a LangGraph agent that drafts SAR-style reports where code renders every fact, and a critic that caught **98/98 injected faults** with 0/20 false rejections. | LightGBM, LangGraph, FAISS, BM25, Gemini, FastAPI, Streamlit |
 | **[DocuGuard](https://github.com/iamrohitkumaryadav9/DocuGuard)** | Detects forged ID documents with a two-branch fusion CNN (RGB + Error-Level Analysis) trained from scratch: **94.0% accuracy, 0.990 ROC-AUC**, +24 pts over a Random Forest baseline. Grad-CAM explainability, privacy-safe synthetic data (no real PII). | PyTorch, OpenCV, FastAPI, Docker, pytest |
-| **[AgentRAG](https://github.com/iamrohitkumaryadav9/AgentRAG)** | Multi-agent RAG service (router → retriever → synthesizer → critic) that returns cited answers with confidence scores, or refuses when evidence is insufficient. Golden-set eval harness gated in CI. | LangGraph, FAISS, Gemini, Pydantic, OpenTelemetry |
-| **DocQA** | RAG question answering over PDFs with source citations and low-confidence refusal; chunking strategies and LLM/embedding providers compared with RAGAS. | LangChain (LCEL), ChromaDB, FastAPI, RAGAS |
-| **Quantis** | Real-time AI stock-analysis platform: live WebSocket prices, Gemini-generated company summaries, strategy backtesting and paper trading. | Next.js, TypeScript, MongoDB, Gemini API |
+| **[MCP Tool Server & Agent Client](https://github.com/iamrohitkumaryadav9/MCP)** | MCP servers over stdio and Streamable HTTP with typed tools, a Python client and a LangChain agent that discovers and calls them, plus a gateway routing one client to multiple servers. | FastMCP, LangChain, Docker |
+
+**Earlier work:** DocQA (PDF question answering with citations, compared with RAGAS) · Quantis (real-time AI stock-analysis platform with Gemini summaries and backtesting).
 
 ## 🛠️ Tech
 
-**GenAI & Agents:** LLM APIs (Gemini, OpenAI, Claude) · Ollama (local LLMs) · LangGraph · LangChain · RAG · Multi-Agent Systems · Prompt Engineering · Structured Outputs (Pydantic) · LLM Evaluation (RAGAS, golden sets)
-**ML & Deep Learning:** PyTorch · scikit-learn · OpenCV · CNNs · Computer Vision · Explainable AI (Grad-CAM) · NumPy · Pandas
+**GenAI & Agents:** LLM APIs (Gemini, OpenAI, Claude) · Ollama (local LLMs) · LangGraph · LangChain · RAG (hybrid BM25 + dense, reranking) · Multi-Agent Systems · MCP · Prompt Engineering · Structured Outputs (Pydantic) · LLM Evaluation (LLM-as-a-judge, RAGAS, pre-registered tests)
+**ML & Deep Learning:** PyTorch · scikit-learn · LightGBM · OpenCV · CNNs · Computer Vision · Explainable AI (Grad-CAM) · NumPy · Pandas
 **Vector Search:** FAISS · ChromaDB · Embeddings
-**Engineering:** Python · TypeScript · SQL · FastAPI · Next.js · React · Docker · GitHub Actions (CI/CD) · pytest · Linux · OpenTelemetry
+**Engineering:** Python · TypeScript · SQL · FastAPI · Streamlit · Next.js · React · Docker · GitHub Actions (CI/CD) · pytest · Linux · OpenTelemetry
 
 ## 💡 How I work
 
-- **Evaluate before you trust.** Golden sets, pre-registered tests and CI gates, not cherry-picked demos.
+- **Evaluate before you trust.** Golden sets, pre-registered tests and CI gates, not cherry-picked demos. I report the null results too.
 - **Refuse rather than hallucinate.** My AI systems say "insufficient evidence" when they don't know.
 - **AI-assisted, human-judged.** I use AI coding agents heavily, and I design the tests that catch them when they're wrong.
 
