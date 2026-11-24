@@ -16,10 +16,11 @@ I build AI systems end-to-end, from framing the problem and the data to model tr
 
 | Project | What it does | Stack |
 |---|---|---|
+| **[Holdout](https://github.com/iamrohitkumaryadav9/holdout)** · [live demo](https://holdout.streamlit.app) | Self-auditing data-science agent for tabular CSVs: it seals a holdout before touching the data, turns LLM proposals into validated leakage-safe scikit-learn pipelines, runs **12 audit checks** for leakage and misleading metrics, and exports a standalone `pipeline.py`. Pre-registered benchmark (28 planted-trap tasks, 2 seeds): the audit layer caught **75.0%** of traps vs **35.7%** for an LLM judge (exact McNemar p = 0.012), at **~₹1.2/run vs ₹8.8** for a ReAct baseline. I report the misses too: the full agent didn't beat its own audits or ReAct. | LangGraph, Gemini, scikit-learn, LightGBM, Streamlit, OpenTelemetry, Hypothesis |
 | **[AgentRAG](https://github.com/iamrohitkumaryadav9/AgentRAG)** · [live demo](https://agentragpreregisteredllm.streamlit.app/) | 4-agent LangGraph RAG system (router → hybrid retriever → synthesizer → critic) evaluated on BEIR SciFact. Hybrid BM25 + dense retrieval raised **nDCG@10 from 0.670 to 0.711** (significant, Holm-corrected); a Gemini verifier reached **κ 0.67 vs expert labels**. A pre-registered test showed the LLM self-critique loop gave **no significant gain**, and pinned the bottleneck on the judge, not retrieval. | LangGraph, Gemini, BM25, FAISS, DeBERTa-NLI, FastAPI, Streamlit |
 | **[TraceGuard](https://github.com/iamrohitkumaryadav9/traceguard)** · [live demo](https://traceguardfirstversionusingelliptical.streamlit.app/) | Evaluation-first AML investigation agent on the real Elliptic Bitcoin dataset: LightGBM detector at **0.79 PR-AUC** (vs 0.18 baseline), a LangGraph agent that drafts SAR-style reports where code renders every fact, and a critic that caught **98/98 injected faults** with 0/20 false rejections. | LightGBM, LangGraph, FAISS, BM25, Gemini, FastAPI, Streamlit |
+| **[RFLens](https://github.com/iamrohitkumaryadav9/rflens)** | Agentic RF data platform: LLM agents and MCP tool servers for querying and analysing RF datasets. v1 complete. | Python, MCP, LangGraph |
 | **[DocuGuard](https://github.com/iamrohitkumaryadav9/DocuGuard)** | Detects forged ID documents with a two-branch fusion CNN (RGB + Error-Level Analysis) trained from scratch: **94.0% accuracy, 0.990 ROC-AUC**, +24 pts over a Random Forest baseline. Grad-CAM explainability, privacy-safe synthetic data (no real PII). | PyTorch, OpenCV, FastAPI, Docker, pytest |
-| **[RFLens](https://github.com/iamrohitkumaryadav9/rflens)** | Agentic RF data platform: agents and MCP tooling over RF datasets. v1 complete. | Python, MCP, LangGraph |
 | **[MCP Tool Server & Agent Client](https://github.com/iamrohitkumaryadav9/MCP)** | MCP servers over stdio and Streamable HTTP with typed tools, a Python client and a LangChain agent that discovers and calls them, plus a gateway routing one client to multiple servers. | FastMCP, LangChain, Docker |
 
 **Earlier work:** DocQA (PDF question answering with citations, compared with RAGAS).
@@ -27,9 +28,9 @@ I build AI systems end-to-end, from framing the problem and the data to model tr
 ## 🛠️ Tech
 
 **GenAI & Agents:** LLM APIs (Gemini, OpenAI, Claude) · Ollama (local LLMs) · LangGraph · LangChain · RAG (hybrid BM25 + dense, reranking) · Multi-Agent Systems · MCP · Prompt Engineering · Structured Outputs (Pydantic) · LLM Evaluation (LLM-as-a-judge, RAGAS, pre-registered tests)  
-**ML & Deep Learning:** PyTorch · scikit-learn · LightGBM · OpenCV · CNNs · Computer Vision · Explainable AI (Grad-CAM) · NumPy · Pandas  
+**ML & Deep Learning:** PyTorch · scikit-learn · LightGBM · AutoML / leakage-safe pipelines · OpenCV · CNNs · Computer Vision · Explainable AI (Grad-CAM) · NumPy · Pandas  
 **Vector Search:** FAISS · ChromaDB · Embeddings  
-**Engineering:** Python · TypeScript · SQL · FastAPI · Streamlit · Next.js · React · Docker · GitHub Actions (CI/CD) · pytest · Linux · OpenTelemetry
+**Engineering:** Python · TypeScript · SQL · FastAPI · Streamlit · Next.js · React · Docker · GitHub Actions (CI/CD) · pytest · Hypothesis · mypy · Linux · OpenTelemetry
 
 ## 💡 How I work
 
