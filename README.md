@@ -9,8 +9,7 @@ I build AI systems end-to-end, from framing the problem and the data to model tr
 ## 🔭 What I'm working on
 
 - **[AEGIS](https://github.com/iamrohitkumaryadav9/ageis)** *(in progress)*: an ML incident-commander. It monitors a deployed model, diagnoses what went wrong, proposes fixes and validates them in a sandbox, with a human approving before anything ships.
-- **[Signalist](https://github.com/iamrohitkumaryadav9/Stock_Tracker)** *(modernizing)*: full-stack stock-tracking app (Next.js, React, TypeScript) with real-time prices, alerts, watchlists and AI insights.
-- **[SentinelAI](https://github.com/iamrohitkumaryadav9/SentinelAI)** *(in progress)*: a local-first AI agent that diagnoses performance incidents from kernel-level eBPF telemetry using open-weight LLMs. A pre-registered benchmark of 5 local models showed the best scored only 37.5–43.8% on hard diagnosis cases, so I declared the phase NO-GO instead of shipping an agent that sounds right and is wrong.
+- **[RepoGym](https://github.com/iamrohitkumaryadav9/repogym)** *(in progress)*: an RL environment and evaluation harness for coding agents, built from real GitHub pull-request data rather than synthetic tasks.
 
 ## 🚀 Featured projects
 
@@ -23,7 +22,7 @@ I build AI systems end-to-end, from framing the problem and the data to model tr
 | **[DocuGuard](https://github.com/iamrohitkumaryadav9/DocuGuard)** | Detects forged ID documents with a two-branch fusion CNN (RGB + Error-Level Analysis) trained from scratch: **94.0% accuracy, 0.990 ROC-AUC**, +24 pts over a Random Forest baseline. Grad-CAM explainability, privacy-safe synthetic data (no real PII). | PyTorch, OpenCV, FastAPI, Docker, pytest |
 | **[MCP Tool Server & Agent Client](https://github.com/iamrohitkumaryadav9/MCP)** | MCP servers over stdio and Streamable HTTP with typed tools, a Python client and a LangChain agent that discovers and calls them, plus a gateway routing one client to multiple servers. | FastMCP, LangChain, Docker |
 
-**Earlier work:** DocQA (PDF question answering with citations, compared with RAGAS).
+**Earlier work:** [SentinelAI](https://github.com/iamrohitkumaryadav9/SentinelAI) (local-first agent diagnosing performance incidents from eBPF telemetry; a pre-registered benchmark of 5 open-weight LLMs led me to call the phase NO-GO rather than ship an unreliable agent) · [Signalist](https://github.com/iamrohitkumaryadav9/Stock_Tracker) (Next.js stock-tracking app with alerts, watchlists and AI insights) · DocQA (PDF question answering with citations, compared with RAGAS).
 
 ## 🛠️ Tech
 
